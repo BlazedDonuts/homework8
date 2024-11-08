@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add</title>
+</head>
+<body>
+    <h2>Add New Post</h2>
+    <?php if (isset($error)) { echo "<p style='color:red;'>$error</p>"; } ?>
+    <form action="/posts/store" method="POST">
+        <label for="title">Title:</label><br>
+        <input type="text" id="title" name="title" required><br>
+        <label for="content">Content:</label><br>
+        <textarea id="content" name="content" required></textarea><br><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

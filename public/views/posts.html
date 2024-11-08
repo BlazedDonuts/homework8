@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posts</title>
+</head>
+<body>
+    <h2>Posts</h2>
+    <form action="/posts/search" method="GET">
+        <input type="text" name="search" placeholder="Search by title">
+        <input type="submit" value="Search">
+    </form>
+    <ul>
+        <?php foreach ($posts as $post): ?>
+            <li>
+                <h3><?php echo htmlspecialchars($post->title); ?></h3>
+                <p><?php echo htmlspecialchars($post->content); ?></p>
+            </li>
+        <?php endforeach; ?>
+    </ul>
+    <a href="/posts/create">Add New Post</a>
+</body>
+</html>
